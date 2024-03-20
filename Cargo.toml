@@ -1,0 +1,28 @@
+[package]
+name = "oms_check"
+version = "0.1.0"
+authors = ["Emil Ernerfeldt <emil.ernerfeldt@gmail.com>"]
+license = "MIT OR Apache-2.0"
+edition = "2021"
+# rust-version = "1.72"
+publish = false
+
+
+[dependencies]
+config = "0.14.0"
+egui = { version = "0.26.2" }
+eframe = { features = [
+    "default",
+    "__screenshot", # __screenshot is so we can dump a screenshot using EFRAME_SCREENSHOT_TO
+] }
+
+# For image support:
+egui_extras = { features = ["default", "image"] }
+
+env_logger = { version = "0.10", default-features = false, features = [
+    "auto-color",
+    "humantime",
+] }
+serde = "1.0.137"
+reqwest = "0.11"
+tokio = { version = "1", features = ["full"] }
